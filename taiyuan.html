@@ -14,6 +14,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Taiyuan | Travel Guide</title>
   <style>
+  * {
+  cursor: url("images/1.cur"), default;
+}
     :root {
       --bg: #F5F1E8;
       --surface: #fffaf3;
@@ -610,5 +613,43 @@
       <p><a href="index.html">Back to welcome page</a></p>
     </div>
   </footer>
+<script>
+  const TRAIL_LENGTH = 8;
+  const IMG_PATH = "images/inti_logo.png";
+
+  const standardBody = document.compatMode === "CSS1Compat"
+    ? document.documentElement
+    : document.body;
+
+  const storage = new Array(TRAIL_LENGTH * 2).fill(0);
+
+  const trailNodes = Array.from({ length: TRAIL_LENGTH }, () => {
+    const div = document.createElement("div");
+    div.style.cssText = "position:absolute;z-index:100;height:0;width:0;pointer-events:none;";
+    const img = document.createElement("img");
+    img.src = IMG_PATH;
+    div.appendChild(img);
+    document.body.appendChild(div);
+    return div;
+  });
+
+  const trail = () => {
+    trailNodes.forEach((node, i) => {
+      node.style.top  = `${storage[i * 2]}px`;
+      node.style.left = `${storage[i * 2 + 1]}px`;
+    });
+    for (let i = storage.length - 1; i >= 2; i--) {
+      storage[i] = storage[i - 2];
+    }
+    requestAnimationFrame(trail);
+  };
+
+  document.addEventListener("mousemove", (e) => {
+    storage[0] = e.pageY + 12;
+    storage[1] = e.pageX + 12;
+  });
+
+  requestAnimationFrame(trail);
+</script>
 </body>
 </html>
