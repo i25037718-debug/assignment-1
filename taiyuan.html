@@ -617,16 +617,12 @@
   const TRAIL_LENGTH = 8;
   const IMG_PATH = "images/inti_logo.png";
 
-  const standardBody = document.compatMode === "CSS1Compat"
-    ? document.documentElement
-    : document.body;
-
   const storage = new Array(TRAIL_LENGTH * 2).fill(0);
 
   const trailNodes = Array.from({ length: TRAIL_LENGTH }, () => {
     const div = document.createElement("div");
-    div.style.cssText = "position:absolute;z-index:100;height:0;width:0;pointer-events:none;";
-  const img = document.createElement("img");
+    div.style.cssText = "position:fixed;z-index:100;height:0;width:0;pointer-events:none;";
+    const img = document.createElement("img");
     img.src = IMG_PATH;
     img.style.cssText = "width:32px;height:32px;object-fit:contain;";
     div.appendChild(img);
@@ -646,8 +642,8 @@
   };
 
   document.addEventListener("mousemove", (e) => {
-    storage[0] = e.pageY + 12;
-    storage[1] = e.pageX + 12;
+    storage[0] = e.clientY + 12;
+    storage[1] = e.clientX + 12;
   });
 
   requestAnimationFrame(trail);
