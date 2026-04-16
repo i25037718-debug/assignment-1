@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4F9B32C92Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4F9B32C92Y');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taiyuan | Travel Guide</title>
+  <style>
+    :root {
+      --bg: #F5F1E8;
+      --surface: #fffaf3;
+      --primary: #3E5C5A;
+      --secondary: #7FA58A;
+      --accent: #A65A3A;
+      --mist: #DCE7E4;
+      --text: #2F2F2F;
+      --muted: #665f58;
+      --line: rgba(62, 92, 90, 0.18);
+      --shadow: 0 18px 40px rgba(47, 47, 47, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .page-shell {
+      width: min(1200px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(245, 241, 232, 0.92);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      width: min(1200px, calc(100% - 2rem));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 0;
+    }
+
+    .brand {
+      color: var(--primary);
+      text-decoration: none;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.55rem;
+      letter-spacing: 0.04em;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.96rem;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: var(--accent);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 2rem;
+      align-items: stretch;
+      padding: 2.2rem 0 3rem;
+    }
+
+    .hero-image {
+      min-height: 520px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(166, 90, 58, 0.18);
+    }
+
+    .hero-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-copy {
+      background: linear-gradient(180deg, rgba(255, 250, 243, 0.94), rgba(220, 231, 228, 0.86));
+      border: 1px solid rgba(62, 92, 90, 0.14);
+      box-shadow: var(--shadow);
+      padding: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-copy .kicker,
+    .section-kicker {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.8rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-copy h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--primary);
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      line-height: 1.08;
+      margin-bottom: 1rem;
+    }
+
+    .hero-copy p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+      font-size: 1.03rem;
+    }
+
+    .quick-facts {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.8rem;
+    }
+
+    .quick-facts div {
+      border-top: 2px solid var(--accent);
+      padding-top: 0.8rem;
+    }
+
+    .quick-facts strong {
+      display: block;
+      margin-bottom: 0.2rem;
+      color: var(--primary);
+      font-size: 1rem;
+    }
+
+    section.content-section {
+      padding: 0 0 3.2rem;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 0.9rem;
+    }
+
+    .section-heading h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--primary);
+      font-size: clamp(1.8rem, 3vw, 2.7rem);
+    }
+
+    .section-heading p {
+      max-width: 420px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 1.8rem;
+      align-items: center;
+    }
+
+    .intro-grid figure,
+    .story-card,
+    .spotlight {
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(62, 92, 90, 0.12);
+    }
+
+    .intro-grid figure img {
+      height: 100%;
+      min-height: 360px;
+      object-fit: cover;
+    }
+
+    .intro-text {
+      padding: 2rem;
+      background: var(--surface);
+      border: 1px solid rgba(62, 92, 90, 0.12);
+      box-shadow: var(--shadow);
+    }
+
+    .intro-text p + p,
+    .story-copy p + p,
+    .spotlight-copy p + p,
+    .food-copy p + p {
+      margin-top: 1rem;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .story-card img {
+      height: 290px;
+      object-fit: cover;
+    }
+
+    .story-copy {
+      padding: 1.4rem;
+    }
+
+    .story-copy h3,
+    .spotlight-copy h3,
+    .food-copy h3 {
+      color: var(--primary);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .spotlight {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+
+    .spotlight img {
+      min-height: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .spotlight-copy {
+      padding: 2rem;
+      background: linear-gradient(180deg, rgba(220, 231, 228, 0.85), rgba(255, 250, 243, 0.95));
+    }
+
+    .food-panel {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .food-copy {
+      padding: 2rem;
+      background: linear-gradient(180deg, rgba(255, 250, 243, 0.95), rgba(245, 241, 232, 0.98));
+      border: 1px solid rgba(166, 90, 58, 0.18);
+      box-shadow: var(--shadow);
+    }
+
+    .food-list {
+      margin-top: 1.2rem;
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .food-item {
+      border-left: 3px solid var(--accent);
+      padding-left: 1rem;
+    }
+
+    .food-item strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 0.2rem;
+    }
+
+    .route {
+      margin-top: 1.4rem;
+      padding: 1.2rem;
+      background: rgba(220, 231, 228, 0.65);
+      border: 1px solid rgba(62, 92, 90, 0.12);
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .intro-grid,
+      .story-grid,
+      .spotlight,
+      .food-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        min-height: 360px;
+      }
+
+      .quick-facts {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav ul {
+        gap: 0.8rem 1rem;
+      }
+
+      .page-shell {
+        width: min(100% - 1rem, 1200px);
+      }
+
+      .hero {
+        gap: 1rem;
+        padding-top: 1.2rem;
+      }
+
+      .hero-copy,
+      .intro-text,
+      .story-copy,
+      .spotlight-copy,
+      .food-copy {
+        padding: 1.4rem;
+      }
+
+      .intro-grid figure img,
+      .story-card img {
+        min-height: 220px;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="taiyuan_index.html">Taiyuan</a>
+      <nav aria-label="Page navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#heritage">Heritage</a></li>
+          <li><a href="#nature">Nature</a></li>
+          <li><a href="#food">Food</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero" aria-label="Hero section">
+      <figure class="hero-image">
+        <img
+          src="images/2.jpg"
+          alt="A wide panoramic view of Taiyuan where historic architecture and modern buildings meet beneath soft evening light, introducing the city as both ancient and contemporary."
+        >
+      </figure>
+
+      <div class="hero-copy">
+        <p class="kicker">Travel Introduction</p>
+        <h1>Where History Breathes Beside the River</h1>
+        <p>
+          Taiyuan, the capital of Shanxi Province, is one of northern China's most quietly compelling cities.
+          It carries the weight of history through temples, pagodas, and carved wooden halls, yet it also feels calm,
+          liveable, and deeply human in scale.
+        </p>
+        <p>
+          Rather than overwhelming visitors with noise, Taiyuan reveals itself through atmosphere: a slow river walk,
+          a courtyard touched by centuries, the scent of noodles in a local restaurant, and a skyline softened by mountains.
+          For travelers who enjoy culture, architecture, and grounded city life, Taiyuan offers a rich and memorable experience.
+        </p>
+
+        <div class="quick-facts" aria-label="Quick facts about Taiyuan">
+          <div>
+            <strong>Best for</strong>
+            <span>History, architecture, local food</span>
+          </div>
+          <div>
+            <strong>Travel style</strong>
+            <span>Slow exploration with cultural depth</span>
+          </div>
+          <div>
+            <strong>Suggested stay</strong>
+            <span>1 to 2 days for a compact city trip</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="content-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">City Character</p>
+          <h2>An Ancient Capital with an Everyday Rhythm</h2>
+        </div>
+        <p>
+          Taiyuan is not only a historical destination. It is also a living city where old architecture, local daily life,
+          and broad urban spaces coexist in a balanced and welcoming way.
+        </p>
+      </div>
+
+      <div class="intro-grid">
+        <figure>
+          <img
+            src="images/3.jpg"
+            alt="A close view of traditional Chinese roof details and weathered wooden architecture in Taiyuan, highlighting craftsmanship, age, and the quiet dignity of the city's cultural heritage."
+          >
+        </figure>
+
+        <div class="intro-text">
+          <p>
+            What makes Taiyuan distinctive is its ability to feel substantial without feeling rushed. The city has served as an important political,
+            military, and cultural center for centuries, and that layered past still shapes its streets and landmarks today. Ancient temples and
+            preserved sites do not feel isolated from the present; they remain part of the city's visual and emotional identity.
+          </p>
+          <p>
+            At the same time, Taiyuan feels approachable. Visitors can move from major heritage sites to relaxed public spaces within a short time,
+            which makes the city ideal for a promotional travel website focused on both culture and accessibility. It offers a complete experience:
+            meaningful history, beautiful architecture, open-air scenery, and a local food tradition with real character.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="heritage" class="content-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Cultural Landmarks</p>
+          <h2>Sites That Preserve the Memory of the City</h2>
+        </div>
+        <p>
+          Taiyuan's most memorable attractions are rooted in architecture and spiritual history, offering visitors an experience that feels reflective,
+          elegant, and visually striking.
+        </p>
+      </div>
+
+      <div class="story-grid">
+        <article class="story-card">
+          <img
+            src="images/4.jpg"
+            alt="Jinci Temple in Taiyuan with classical halls, old cypress trees, and a tranquil courtyard, representing one of the city's most famous historic attractions and a key example of traditional Chinese architecture."
+          >
+          <div class="story-copy">
+            <h3>Jinci</h3>
+            <p>
+              Jinci is often considered the cultural highlight of Taiyuan. Famous for its elegant temple complex, ancient trees, spring water,
+              and Song-era architectural elements, it presents history in an unusually complete form. The site is not only important for its age,
+              but also for the harmony between buildings, landscape, and ritual atmosphere.
+            </p>
+            <p>
+              For visitors, Jinci provides both visual beauty and historical depth. Carved details, shaded pathways, and reflective pools make it a place
+              that encourages slower observation rather than quick sightseeing. It is ideal for presenting Taiyuan as a city of refinement and endurance.
+            </p>
+          </div>
+        </article>
+
+        <article class="story-card">
+          <img
+            src="images/5.jpg"
+            alt="The Twin Pagoda Temple in Taiyuan with two tall brick pagodas rising above the surrounding greenery and city skyline, emphasizing the landmark silhouette that defines the city."
+          >
+          <div class="story-copy">
+            <h3>Twin Pagoda Temple</h3>
+            <p>
+              The Twin Pagoda Temple is one of the most recognizable landmarks in Taiyuan. Its two pagodas stand with strong vertical presence,
+              giving the city an instantly identifiable image. Architecturally, the site demonstrates the strength and symmetry of traditional brick tower design.
+            </p>
+            <p>
+              From a promotional point of view, the Twin Pagodas work especially well because they combine heritage value with visual impact.
+              They represent Taiyuan in a simple but memorable form, making them perfect for web imagery, headline sections, and destination branding.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="nature" class="content-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Nature and Leisure</p>
+          <h2>A Softer Side of the City</h2>
+        </div>
+        <p>
+          Alongside its historical sites, Taiyuan offers space to rest, walk, and experience the city in a more open and contemporary way.
+        </p>
+      </div>
+
+      <article class="spotlight">
+        <img
+          src="images/6.jpg"
+          alt="A calm evening scene along the Fen River in Taiyuan, with water reflecting city lights, tree-lined paths, and a spacious riverside environment that suggests relaxation and urban leisure."
+        >
+        <div class="spotlight-copy">
+          <h3>Fen River Scenic Area</h3>
+          <p>
+            The Fen River gives Taiyuan much of its breathing space. Riverside parks, broad walkways, and evening views provide a different impression of the city from its temples and pagodas.
+            Here, visitors see how Taiyuan balances heritage with a more relaxed urban lifestyle.
+          </p>
+          <p>
+            This area is especially useful in a tourism website because it broadens the city's image. Taiyuan is not only about monuments; it is also about comfort,
+            movement, and atmosphere. A walk by the river at dusk can feel just as memorable as a visit to a historic site, particularly for travelers who appreciate slower, more reflective experiences.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <section id="food" class="content-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">Local Cuisine</p>
+          <h2>Flavors That Complete the Journey</h2>
+        </div>
+        <p>
+          Food in Taiyuan is hearty, direct, and closely tied to regional identity, making it an essential part of the travel story.
+        </p>
+      </div>
+
+      <div class="food-panel">
+        <div class="food-copy">
+          <h3>A Northern Table with Strong Identity</h3>
+          <p>
+            No introduction to Taiyuan feels complete without its food. Shanxi cuisine is famous for its mastery of flour-based dishes,
+            rich textures, and the unmistakable depth of aged vinegar. In Taiyuan, meals often feel practical and comforting, yet they also communicate strong local character.
+          </p>
+          <p>
+            For visitors, food becomes another way of understanding the city. The craft behind knife-cut noodles, the balanced richness of guo you rou,
+            and the bold flavor of vinegar-based dishes all reflect a place with confidence in its traditions.
+          </p>
+        </div>
+
+        <div class="food-copy">
+          <h3>What to Try</h3>
+          <div class="food-list">
+            <div class="food-item">
+              <strong>Knife-cut noodles</strong>
+              <span>A signature Shanxi dish known for its chewy texture, hand-cut rhythm, and everyday popularity.</span>
+            </div>
+            <div class="food-item">
+              <strong>Guo you rou</strong>
+              <span>A savory classic with tender slices of meat, balanced seasoning, and a distinctly northern style.</span>
+            </div>
+            <div class="food-item">
+              <strong>Mature Shanxi vinegar</strong>
+              <span>Complex, aromatic, and central to the region's taste profile, adding a memorable finish to many dishes.</span>
+            </div>
+          </div>
+
+          <div class="route">
+            <strong>Suggested one-day route:</strong>
+            Begin at Jinci in the morning, continue to the Twin Pagoda Temple in the afternoon, enjoy a relaxed river walk at sunset,
+            and finish the day with a bowl of noodles and local specialties.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="page-shell">
+      <p></p>
+      <p><a href="index.html">Back to welcome page</a></p>
+    </div>
+  </footer>
+</body>
+</html>
